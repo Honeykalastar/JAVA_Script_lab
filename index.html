@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title> JavaScript Demo</title>
+     <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal JavaScript-->
+     <script> 
+        function showWelcome() {
+
+            //Get values from input boxes
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let course = document.getElementById("course").value;
+            let email = document.getElementById("email").value;
+            let gender = document.getElementById("gender").value;
+            let semester = document.getElementById("semester").value;
+
+            //Display welcome message
+            document.getElementById("output").innerHTML = 
+                "<h2>Welcome  " + name + "!</h2>" + 
+                "<p>Your Age is: " + age + "</p>" +
+                "<p>Your Course is: " + course + "</p>" +
+                "<p>Your Email is: " + email + "</p>" +
+                "<p>Your Gender is: " + gender + "</p>" +
+                "<p>Your Semester is: " + semester + "</p>";
+
+            //Console Methods
+            console.log("User Name: " + name);
+            console.info("User Age: " + age);
+            console.info("User Course: " + course);
+            console.info("User Email: " + email);
+            console.info("User Gender: " + gender);
+            console.info("User Semester: " + semester);
+            console.warn("This is a warning message.");
+            console.error("This is an error message (Demo Purpose)");
+        }
+     </script>
+     </head>
+<body>
+    <div class="container">
+    <h1>SIT Student Information</h1>
+    <label>Enter Name: </label><br>
+    <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+    <label>Enter Age: </label><br>
+    <input type="number" id="age" placeholder="Enter your age"><br><br>
+
+    <label>Enter Course: </label><br>
+    <input type="text" id="course" placeholder="Enter your course"><br><br>
+
+    <label>Enter Email: </label><br>
+    <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+    <label>Enter Gender: </label><br>   
+    <input type="text" id="gender" placeholder="Enter your Gender"><br><br>
+
+    <label>Enter Semester: </label><br>
+    <input type="text" id="semester" placeholder="Enter your Semester"><br><br>
+
+    <!--Inline JavaScript-->
+    <button onclick="showWelcome(); greet()">
+        Submit
+    </button>
+    <hr>
+    <div id="output"></div>
+
+</div>
+    <!--External JavaScript-->
+    <script src="script.js"></script>
+</body>
+</html>
