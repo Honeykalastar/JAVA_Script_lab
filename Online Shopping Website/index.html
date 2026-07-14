@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <title>Online Shopping Website</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+    <body>
+    <hr>
+        <h1>Honey's Store</h1>
+        <p>Best deals | Best Prices | Best Quality | Best Discounts</p>
+    </hr>
+    <nav>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>  
+    </nav>    
+    <section class="container">
+        <article class="product-card">
+            <h2>Billing Calculator</h2>
+            <label>Customer Name:</label><br>
+            <input type="text" id="name"><br><br>
+
+            <label>Select Product:</label><br>
+            <select id="product" onchange="setPrice()">
+                <option value="">Choose a product</option>
+                <option value="Smartphone" data-price="25000">Smartphone</option>
+                <option value="TV" data-price="50000">TV</option>
+                <option value="Laptop" data-price="75000">Laptop</option>
+                <option value="Headphones" data-price="2000">Headphones</option>
+                <option value="Smartwatch" data-price="5000">Smartwatch</option>
+            </select>
+            <label>Price (₹):</label><br>
+            <input type="number" id="price" readonly><br><br>
+            <label>Quantity:</label><br>
+            <input type="number" id="quantity"><br><br>
+            <button onclick="calculateBill()">
+                Generate Bill
+            </button>
+            <hr>
+            <div id="output"></div>
+            <script src="script2.js"></script>
+        </article>
+    </section> 
+    </body>
+ </html> 
+
