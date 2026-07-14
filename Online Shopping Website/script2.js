@@ -1,5 +1,5 @@
 function setPrice(){
-
+    
     let product = document.getElementById("product");
 
     let price =
@@ -41,4 +41,16 @@ function calculateBill(){
     "<b>GST (18%):</b> ₹" + gst.toFixed(2) + "<br><br>" +
 
     "<h2>Final Amount = ₹" + finalBill.toFixed(2) + "</h2>";
+
+    alert("Welcome to JavaScript Programming!");
+    console.table([
+        {
+            Name: "Sample User",
+            Course: "JavaScript"
+        }
+    ]);
+
+    console.time("Execution");
+    console.timeEnd("Execution");
+
 }
