@@ -2,40 +2,40 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#eef2f7;
+    background:#f4f6f9;
     color:#333;
 }
 
 /* Header */
 
 header{
-    background:linear-gradient(135deg,#2874f0,#0056d6);
+    background:linear-gradient(135deg,#0d6efd,#4facfe);
     color:white;
     text-align:center;
-    padding:30px;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    padding:25px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1{
-    font-size:38px;
-    margin-bottom:10px;
+    font-size:36px;
+    margin-bottom:8px;
 }
 
 header p{
-    font-size:18px;
+    font-size:17px;
 }
 
 /* Navigation */
 
 nav{
-    background:#1f2937;
+    background:#212529;
     display:flex;
     justify-content:center;
-    gap:40px;
+    gap:35px;
     padding:15px;
 }
 
@@ -43,151 +43,181 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
+    transition:0.3s;
 }
 
 nav a:hover{
-    color:#ffd700;
+    color:#ffc107;
 }
 
-/* Products */
-
-.products{
-    width:90%;
-    margin:40px auto;
-}
-
-.products h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#2874f0;
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    text-align:center;
-    padding:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card img{
-    width:120px;
-    height:120px;
-    object-fit:contain;
-}
-
-.card h3{
-    margin:15px 0;
-}
-
-.card p{
-    font-size:20px;
-    color:#0d6efd;
-    font-weight:bold;
-}
-
-/* Billing Section */
+/* Main Container */
 
 .container{
     width:90%;
-    margin:40px auto;
+    margin:35px auto;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:30px;
 }
 
+/* Cards */
+
 .product-card,
 .bill{
+
     background:white;
-    border-radius:15px;
+
     padding:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    border-radius:15px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
 }
 
 .product-card h2,
 .bill h2{
+
     text-align:center;
-    color:#2874f0;
-    margin-bottom:25px;
+
+    color:#0d6efd;
+
+    margin-bottom:20px;
+
 }
+
+/* Labels */
 
 label{
+
     display:block;
+
     margin-top:15px;
+
     font-weight:bold;
+
 }
 
+/* Inputs */
+
 input,
-select{
+select,
+textarea{
+
     width:100%;
+
     padding:12px;
+
     margin-top:8px;
+
     border:1px solid #ccc;
+
     border-radius:8px;
-    font-size:16px;
+
+    font-size:15px;
+
+}
+
+textarea{
+
+    resize:none;
+
 }
 
 input:focus,
-select:focus{
+select:focus,
+textarea:focus{
+
     outline:none;
-    border:2px solid #2874f0;
+
+    border:2px solid #0d6efd;
+
 }
 
-/* Button */
+/* Checkbox */
+
+input[type="checkbox"]{
+
+    width:auto;
+
+    margin-right:8px;
+
+}
+
+/* Buttons */
 
 button{
+
     width:100%;
+
+    margin-top:18px;
+
     padding:14px;
-    margin-top:25px;
-    background:#28a745;
-    color:white;
+
     border:none;
+
     border-radius:8px;
-    font-size:18px;
+
+    background:#198754;
+
+    color:white;
+
+    font-size:17px;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:0.3s;
+
 }
 
 button:hover{
-    background:#218838;
+
+    background:#157347;
+
     transform:scale(1.02);
+
 }
 
-/* Bill Output */
+/* Bill */
 
 #output{
-    font-size:18px;
-    line-height:2;
-    padding:20px;
-    border-left:5px solid #2874f0;
+
     background:#f8f9fa;
-    border-radius:8px;
+
+    border-left:5px solid #0d6efd;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    min-height:250px;
+
+    line-height:1.9;
+
 }
 
 #output h2{
-    color:#28a745;
+
+    color:#198754;
+
+    margin-bottom:15px;
+
 }
 
 /* Footer */
 
 footer{
-    margin-top:50px;
-    background:#1f2937;
+
+    margin-top:40px;
+
+    background:#212529;
+
     color:white;
+
     text-align:center;
+
     padding:20px;
+
 }
 
 /* Responsive */
@@ -195,16 +225,25 @@ footer{
 @media(max-width:768px){
 
 .container{
-    grid-template-columns:1fr;
+
+grid-template-columns:1fr;
+
 }
 
 nav{
-    flex-direction:column;
-    gap:15px;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:15px;
+
 }
 
 header h1{
-    font-size:30px;
+
+font-size:28px;
+
 }
 
 }

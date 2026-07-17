@@ -1,49 +1,271 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
+<html lang="en">
+
+<head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0">
-    <title>Online Shopping Website</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Honey's Store</title>
+
     <link rel="stylesheet" href="style.css">
- </head>
-    <body>
-    <hr>
-        <h1>Honey's Store</h1>
-        <p>Best deals | Best Prices | Best Quality | Best Discounts</p>
-    </hr>
-    <nav>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>  
-    </nav>    
-    <section class="container">
-        <article class="product-card">
-            <h2>Billing Calculator</h2>
-            <label>Customer Name:</label><br>
-            <input type="text" id="name"><br><br>
 
-            <label>Select Product:</label><br>
-            <select id="product" onchange="setPrice()">
-                <option value="">Choose a product</option>
-                <option value="Smartphone" data-price="25000">Smartphone</option>
-                <option value="TV" data-price="50000">TV</option>
-                <option value="Laptop" data-price="75000">Laptop</option>
-                <option value="Headphones" data-price="2000">Headphones</option>
-                <option value="Smartwatch" data-price="5000">Smartwatch</option>
-            </select>
-            <label>Price (₹):</label><br>
-            <input type="number" id="price" readonly><br><br>
-            <label>Quantity:</label><br>
-            <input type="number" id="quantity"><br><br>
-            <button onclick="calculateBill()">
-                Generate Bill
-            </button>
-            <hr>
-            <div id="output"></div>
-            <script src="script2.js"></script>
-        </article>
-    </section> 
-    </body>
- </html> 
+</head>
 
+<body>
+
+<header>
+
+    <h1>🛒 Honey's Store</h1>
+
+    <p>Best Deals | Best Prices | Best Quality | Fast Delivery</p>
+
+</header>
+
+<nav>
+
+    <a href="#">Home</a>
+
+    <a href="#">Products</a>
+
+    <a href="#">Offers</a>
+
+    <a href="#">Contact</a>
+
+</nav>
+
+<section class="container">
+
+<div class="product-card">
+
+<h2>Shopping Billing System</h2>
+
+<label>Customer Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter Customer Name">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email">
+
+<label>Mobile Number</label>
+
+<input
+type="text"
+id="mobile"
+maxlength="10"
+placeholder="Enter Mobile Number">
+
+<label>Delivery Address</label>
+
+<textarea
+id="address"
+rows="3"
+placeholder="Enter Delivery Address"></textarea>
+
+<label>Select Product</label>
+
+<select
+id="product"
+onchange="setPrice()">
+
+<option value="">Choose Product</option>
+
+<option value="Smartphone">Smartphone</option>
+
+<option value="Laptop">Laptop</option>
+
+<option value="TV">TV</option>
+
+<option value="Headphones">Headphones</option>
+
+<option value="Smartwatch">Smartwatch</option>
+
+</select>
+
+<label>Price (₹)</label>
+
+<input
+type="number"
+id="price"
+readonly>
+
+<label>Quantity</label>
+
+<input
+type="number"
+id="quantity"
+min="1"
+placeholder="Enter Quantity">
+
+<label>Coupon Code</label>
+
+<input
+type="text"
+id="coupon"
+placeholder="WELCOME10">
+
+<label>Delivery Type</label>
+
+<select id="delivery">
+
+<option value="0">
+Free Standard Delivery
+</option>
+
+<option value="250">
+Exclusive Delivery
+</option>
+
+</select>
+
+<!-- PAYMENT -->
+
+<label>Payment Method</label>
+
+<select
+id="payment"
+onchange="showPaymentFields()">
+
+<option value="Cash On Delivery">Cash On Delivery</option>
+
+<option value="UPI">UPI</option>
+
+<option value="Debit Card">Debit Card</option>
+
+<option value="Credit Card">Credit Card</option>
+
+</select>
+
+<!-- Dynamic Payment Fields -->
+
+<div id="paymentDetails" style="display:none; margin-top:15px;">
+
+<div id="upiField" style="display:none;">
+
+<label>UPI ID</label>
+
+<input
+type="text"
+id="upiId"
+placeholder="example@upi">
+
+</div>
+
+<div id="cardFields" style="display:none;">
+
+<label>Card Number</label>
+
+<input
+type="text"
+id="cardNumber"
+maxlength="16"
+placeholder="1234 5678 9012 3456">
+
+<label>Expiry Date</label>
+
+<input
+type="month"
+id="expiryDate">
+
+<label>CVV</label>
+
+<input
+type="password"
+id="cvv"
+maxlength="3"
+placeholder="123">
+
+</div>
+
+</div>
+
+<br>
+
+<label>
+
+<input
+type="checkbox"
+id="gift"
+onclick="toggleGiftMessage()">
+
+Send as Gift 🎁
+
+</label>
+
+<div
+id="giftSection"
+style="display:none; margin-top:15px;">
+
+<label>Gift Message</label>
+
+<textarea
+
+id="giftMessage"
+
+maxlength="50"
+
+rows="3"
+
+placeholder="Maximum 50 Characters">
+
+</textarea>
+
+</div>
+
+<button onclick="calculateBill()">
+
+Generate Bill
+
+</button>
+
+<!-- Changed -->
+
+<button onclick="printBill()">
+
+Print Bill
+
+</button>
+
+<button onclick="clearForm()">
+
+Clear Form
+
+</button>
+
+</div>
+
+<div class="bill">
+
+<div id="output">
+
+<h2>Your Shopping Bill will appear here.</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Honey's Store | Designed using HTML, CSS & JavaScript
+
+</p>
+
+</footer>
+
+<script src="script2.js"></script>
+
+</body>
+
+</html>
