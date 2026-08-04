@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grading System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎓 Student Grading System</h1>
+        <p>JavaScript Lab Assignment | Form Validation & Control Structures</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Student Information</h2>
+
+            <label>Student Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Student Name">
+
+            <label>PRN</label>
+            <input
+                type="text"
+                id="roll"
+                placeholder="Enter PRN">
+
+            <label>Course</label>
+            <input
+                type="text"
+                id="course"
+                placeholder="B.Tech CSE">
+
+            <label>Semester</label>
+
+            <select id="semester">
+
+                <option value="">Select Semester</option>
+                <option>I</option>
+                <option>II</option>
+                <option>III</option>
+                <option>IV</option>
+                <option>V</option>
+                <option>VI</option>
+                <option>VII</option>
+                <option>VIII</option>
+
+            </select>
+
+            <label>Create Password</label>
+
+            <input
+                type="password"
+                id="createPassword"
+                placeholder="Create Password">
+
+            <small style="color:white;">
+                Password must contain:
+                <br>
+                ✔ Minimum 8 characters
+                <br>
+                ✔ One Uppercase Letter
+                <br>
+                ✔ One Lowercase Letter
+                <br>
+                ✔ One Number
+                <br>
+                ✔ One Special Character
+            </small>
+
+            <hr>
+
+            <h2>Enter Marks (Out of 100)</h2>
+
+            <label>CC</label>
+
+            <input
+                type="number"
+                id="cc"
+                min="0"
+                max="100">
+
+            <label>CN</label>
+
+            <input
+                type="number"
+                id="cn"
+                min="0"
+                max="100">
+
+            <label>Agentic AI</label>
+
+            <input
+                type="number"
+                id="agentic-ai"
+                min="0"
+                max="100">
+
+            <label>JavaScript</label>
+
+            <input
+                type="number"
+                id="javascript"
+                min="0"
+                max="100">
+
+            <label>Flexi Credit</label>
+
+            <input
+                type="number"
+                id="flexi-credit"
+                min="0"
+                max="100">
+
+            <button onclick="calculateResult()">
+                Calculate Result
+            </button>
+
+            <button onclick="printResult()">
+                Print Result
+            </button>
+
+            <button onclick="clearForm()">
+                Reset
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Student Result</h2>
+
+            <div id="output">
+
+                <h3 style="text-align:center;">
+                    Your Result Will Appear Here
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+            © 2026 Student Grading System |
+            HTML • CSS • JavaScript
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

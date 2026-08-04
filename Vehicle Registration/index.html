@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vehicle Registration Validator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="header-content">
+
+        <div class="logo">🚗</div>
+
+        <div class="header-text">
+
+        <h1>Vehicle Registration Validator</h1>
+
+        <p>Validate Indian Vehicle Registration Numbers</p>
+
+        </div>
+
+        </div>
+
+    </header>
+
+    <!-- Main Container -->
+
+    <div class="main-container">
+
+        <!-- Left Card -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                Vehicle Registration
+
+            </div>
+
+            <label for="regNo">
+
+                Registration Number
+
+            </label>
+
+            <input
+                type="text"
+                id="regNo"
+                maxlength="10"
+                placeholder="Example : MH31AB1234">
+
+            <button onclick="checkRegistration()">
+
+                🚗 Validate Registration
+
+            </button>
+
+            <div id="result">
+
+            </div>
+
+        </div>
+
+        <!-- Right Card -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                Registration Rules
+
+            </div>
+
+            <ul>
+
+                <li>✅ Registration number should not be empty.</li>
+
+                <li>✅ Length should be exactly 10 characters.</li>
+
+                <li>✅ First two characters must be uppercase alphabets.</li>
+
+                <li>✅ Next two characters must be digits.</li>
+
+                <li>✅ Next two characters must be uppercase alphabets.</li>
+
+                <li>✅ Last four characters must be digits.</li>
+
+            </ul>
+
+            <hr>
+
+            <div class="card-title examples-title">
+
+                Valid Examples
+
+            </div>
+
+            <div class="examples">
+
+                <span>MH31AB1234</span>
+
+                <span>DL01CD5678</span>
+
+                <span>MP20XY9876</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Information Section -->
+
+    <section class="info">
+
+        <h2>About this Validator</h2>
+
+        <p>
+
+            This application validates Indian-style vehicle registration numbers
+            using JavaScript functions and exception handling (try-catch).
+            It verifies the entered registration number according to the
+            specified format and displays whether it is valid or invalid,
+            along with an appropriate message.
+
+        </p>
+
+    </section>
+
+</body>
+
+</html>
