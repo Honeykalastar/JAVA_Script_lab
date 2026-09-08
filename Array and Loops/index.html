@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Attendance Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">TA</div>
+
+                <div>
+                    <h2>TeacherTrack</h2>
+                    <span>Attendance System</span>
+                </div>
+            </div>
+
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <nav class="navigation">
+
+                <button class="nav-item active" onclick="showSection('dashboard', this)">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </button>
+
+                <button class="nav-item" onclick="showSection('attendance', this)">
+                    <span class="nav-icon">✓</span>
+                    <span>Attendance</span>
+                </button>
+
+                <button class="nav-item" onclick="showSection('teachers', this)">
+                    <span class="nav-icon">♙</span>
+                    <span>Teachers</span>
+                </button>
+
+                <button class="nav-item" onclick="showSection('reports', this)">
+                    <span class="nav-icon">▥</span>
+                    <span>Reports</span>
+                </button>
+
+            </nav>
+
+
+            <div class="menu-title second-menu">
+                SYSTEM
+            </div>
+
+
+            <nav class="navigation">
+
+                <button class="nav-item" onclick="showSection('about', this)">
+                    <span class="nav-icon">ⓘ</span>
+                    <span>About System</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="admin-card">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Administrator</strong>
+                        <span>Management Panel</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div class="page-title">
+
+                    <div class="mobile-menu" onclick="toggleSidebar()">
+                        ☰
+                    </div>
+
+                    <div>
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p id="pageSubtitle">
+                            Monitor teacher attendance and daily records
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        AD
+                    </div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section id="dashboard" class="section active-section">
+
+                <div class="dashboard">
+
+
+                    <div class="welcome">
+
+                        <div>
+                            <h2>Good Morning, Administrator 👋</h2>
+
+                            <p>
+                                Here's today's teacher attendance overview.
+                            </p>
+                        </div>
+
+
+                        <div class="date-display">
+                            📅
+                            <span id="currentDate"></span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATISTICS -->
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon blue">
+                                👨‍🏫
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Teachers</span>
+                                <strong id="totalTeachers">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Present Today</span>
+                                <strong id="presentTeachers">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon red">
+                                ✕
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Absent Today</span>
+                                <strong id="absentTeachers">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon purple">
+                                %
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Attendance Rate</span>
+                                <strong id="attendanceRate">0%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DASHBOARD GRID -->
+
+                    <div class="main-grid">
+
+
+                        <!-- ATTENDANCE TABLE -->
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+                                    <h2>Today's Attendance</h2>
+
+                                    <p>
+                                        Mark attendance for today's classes
+                                    </p>
+                                </div>
+
+
+                                <div class="attendance-actions">
+
+                                    <button
+                                        class="btn btn-present"
+                                        onclick="markAllPresent()">
+                                        ✓ Mark All Present
+                                    </button>
+
+                                    <button
+                                        class="btn btn-reset"
+                                        onclick="resetAttendance()">
+                                        ↻ Reset
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="table-tools">
+
+                                <div class="search-box">
+
+                                    <span>⌕</span>
+
+                                    <input
+                                        type="text"
+                                        id="dashboardSearch"
+                                        placeholder="Search teacher..."
+                                        onkeyup="searchTeacher('dashboardSearch','dashboardTable')"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="table-wrapper">
+
+                                <table>
+
+                                    <thead>
+
+                                        <tr>
+                                            <th>TEACHER</th>
+                                            <th>SUBJECT</th>
+                                            <th>TIME</th>
+                                            <th>STATUS</th>
+                                            <th>ACTION</th>
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody id="dashboardTable">
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- QUICK ADD -->
+
+                        <div class="panel add-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+                                    <h2>Quick Add Teacher</h2>
+
+                                    <p>
+                                        Add a new teacher
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <form id="teacherForm" class="teacher-form">
+
+                                <label>
+                                    Teacher Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="teacherName"
+                                    placeholder="Enter teacher name"
+                                    required
+                                >
+
+
+                                <label>
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="teacherEmail"
+                                    placeholder="teacher@email.com"
+                                    required
+                                >
+
+
+                                <label>
+                                    Subject
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="teacherSubject"
+                                    placeholder="e.g. Computer Science"
+                                    required
+                                >
+
+
+                                <label>
+                                    Class Time
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="teacherTime"
+                                    placeholder="e.g. 10:00 AM"
+                                    required
+                                >
+
+
+                                <button
+                                    type="submit"
+                                    class="add-btn">
+                                    + Add Teacher
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ATTENDANCE ================= -->
+
+            <section id="attendance" class="section">
+
+                <div class="dashboard">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Attendance Management</h2>
+
+                            <p>
+                                Mark and manage daily teacher attendance.
+                            </p>
+                        </div>
+
+                        <div class="date-display">
+                            📅
+                            <span id="attendanceDate"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel full-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Teacher Attendance</h2>
+
+                                <p>
+                                    Use the buttons to mark present or absent.
+                                </p>
+                            </div>
+
+                            <div class="attendance-actions">
+
+                                <button
+                                    class="btn btn-present"
+                                    onclick="markAllPresent()">
+                                    ✓ All Present
+                                </button>
+
+                                <button
+                                    class="btn btn-reset"
+                                    onclick="resetAttendance()">
+                                    ↻ Reset
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-tools">
+
+                            <div class="search-box">
+
+                                <span>⌕</span>
+
+                                <input
+                                    type="text"
+                                    id="attendanceSearch"
+                                    placeholder="Search teacher..."
+                                    onkeyup="searchTeacher('attendanceSearch','attendanceTable')"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+                                        <th>TEACHER</th>
+                                        <th>EMAIL</th>
+                                        <th>SUBJECT</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="attendanceTable">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TEACHERS ================= -->
+
+            <section id="teachers" class="section">
+
+                <div class="dashboard">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Teacher Directory</h2>
+
+                            <p>
+                                View all registered teachers.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel full-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Registered Teachers</h2>
+
+                                <p>
+                                    Complete teacher information
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-tools">
+
+                            <div class="search-box">
+
+                                <span>⌕</span>
+
+                                <input
+                                    type="text"
+                                    id="teacherSearch"
+                                    placeholder="Search teacher..."
+                                    onkeyup="searchTeacher('teacherSearch','teacherTable')"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+                                        <th>TEACHER</th>
+                                        <th>EMAIL</th>
+                                        <th>SUBJECT</th>
+                                        <th>TIME</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="teacherTable">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= REPORTS ================= -->
+
+            <section id="reports" class="section">
+
+                <div class="dashboard">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Attendance Reports</h2>
+
+                            <p>
+                                Summary of today's attendance.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon blue">
+                                👨‍🏫
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Teachers</span>
+                                <strong id="reportTotal">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Present</span>
+                                <strong id="reportPresent">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon red">
+                                ✕
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Absent</span>
+                                <strong id="reportAbsent">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon purple">
+                                %
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Attendance</span>
+                                <strong id="reportRate">0%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel report-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Attendance Summary</h2>
+
+                                <p>
+                                    Current attendance distribution
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="report-content">
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
+
+                                    <span>Present</span>
+
+                                    <strong id="presentPercentage">
+                                        0%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress-bar">
+                                    <div
+                                        id="presentProgress"
+                                        class="progress-fill present-fill">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
+
+                                    <span>Absent</span>
+
+                                    <strong id="absentPercentage">
+                                        0%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress-bar">
+                                    <div
+                                        id="absentProgress"
+                                        class="progress-fill absent-fill">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ABOUT ================= -->
+
+            <section id="about" class="section">
+
+                <div class="dashboard">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>About TeacherTrack</h2>
+
+                            <p>
+                                Teacher Attendance Management System
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <div class="about-icon">
+                            TA
+                        </div>
+
+                        <h2>TeacherTrack</h2>
+
+                        <p>
+                            TeacherTrack is a simple web-based attendance
+                            management system designed to maintain daily
+                            teacher attendance records.
+                        </p>
+
+
+                        <div class="feature-list">
+
+                            <div>
+                                ✓
+                                <span>Teacher management</span>
+                            </div>
+
+                            <div>
+                                ✓
+                                <span>Daily attendance tracking</span>
+                            </div>
+
+                            <div>
+                                ✓
+                                <span>Attendance statistics</span>
+                            </div>
+
+                            <div>
+                                ✓
+                                <span>Search and reporting</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FOOTER ================= -->
+
+            <footer>
+
+                <span>
+                    TeacherTrack • Teacher Attendance Management System
+                </span>
+
+                <span>
+                    Academic Project
+                </span>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- TOAST MESSAGE -->
+
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
