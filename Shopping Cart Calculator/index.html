@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header>
+
+            <div class="cart-icon">
+                🛒
+            </div>
+
+            <h1>
+                Shopping Cart Calculator
+            </h1>
+
+            <p class="subtitle">
+                Experiment 5 — Arrays, Objects & Loops in JavaScript
+            </p>
+
+        </header>
+
+
+
+        <!-- =========================
+             PRODUCT INPUT
+        ========================== -->
+
+        <section class="input-section">
+
+            <div class="input-group">
+
+                <label for="name">
+                    🛍️ Product Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter product name"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="price">
+                    🏷️ Price (₹)
+                </label>
+
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Enter price"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="qty">
+                    📦 Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="qty"
+                    placeholder="Enter quantity"
+                >
+
+            </div>
+
+
+            <button
+                class="add-btn"
+                onclick="addProduct()"
+            >
+                ➕ Add Product
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             SHOPPING CART
+        ========================== -->
+
+        <section class="cart-section">
+
+            <div class="section-title">
+
+                <span>
+                    🛒
+                </span>
+
+                <h2>
+                    Shopping Cart
+                </h2>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table id="cartTable">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Product</th>
+
+                        <th>Price (₹)</th>
+
+                        <th>Quantity</th>
+
+                        <th>Total (₹)</th>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             LOWER SECTION
+        ========================== -->
+
+        <div class="bottom-grid">
+
+
+            <!-- =========================
+                 BILL SUMMARY
+            ========================== -->
+
+            <section class="bill-section">
+
+                <div class="section-title">
+
+                    <span>
+                        💰
+                    </span>
+
+                    <h2>
+                        Bill Summary
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="result"
+                    class="bill-output"
+                >
+
+                    <div class="bill-row">
+
+                        <span>
+                            TOTAL AMOUNT
+                        </span>
+
+                        <strong>
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bill-row">
+
+                        <span>
+                            DISCOUNT
+                        </span>
+
+                        <strong>
+                            ₹0.00 (0%)
+                        </strong>
+
+                    </div>
+
+
+                    <div class="final-row">
+
+                        <span>
+                            FINAL AMOUNT
+                        </span>
+
+                        <strong>
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 ITEM SUMMARY
+            ========================== -->
+
+            <section class="summary-section">
+
+                <div class="section-title">
+
+                    <span>
+                        📋
+                    </span>
+
+                    <h2>
+                        Item Summary
+                    </h2>
+
+                </div>
+
+
+                <ul id="summary">
+
+                    <li>
+                        No products added yet.
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =========================
+             EXPENSIVE PRODUCTS
+        ========================== -->
+
+        <section class="expensive-section">
+
+            <div class="section-title">
+
+                <span>
+                    💎
+                </span>
+
+                <h2>
+                    Expensive Products
+                </h2>
+
+                <span class="condition">
+                    Price &gt; ₹1000
+                </span>
+
+            </div>
+
+
+            <ul id="expensive">
+
+                <li>
+                    No expensive products found.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
