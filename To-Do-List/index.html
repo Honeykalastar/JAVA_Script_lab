@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="title-icon">✓</div>
+
+            <div>
+                <h1>My To-Do List</h1>
+                <p>Stay organized. Get things done.</p>
+            </div>
+        </div>
+
+        <!-- Add Task Section -->
+        <div class="input-section">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a new task..."
+            >
+
+            <button id="addBtn">ADD</button>
+        </div>
+
+        <!-- Task Header -->
+        <div class="task-header">
+            <h2>My Tasks</h2>
+            <span id="taskCount">0 tasks</span>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList"></ul>
+
+        <!-- Empty Message -->
+        <div id="emptyMessage" class="empty-message">
+            <div class="empty-icon">✓</div>
+            <h3>No tasks yet</h3>
+            <p>Add a task above to get started!</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
