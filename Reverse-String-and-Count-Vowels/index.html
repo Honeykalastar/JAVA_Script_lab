@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Case Study - JavaScript String Operations</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="minecraft-tag">
+                ⛏ CASE STUDY 06
+            </div>
+
+            <h1>
+                JavaScript <span>String Adventures</span>
+            </h1>
+
+            <p>
+                Case Study: Reverse a String & Count Vowels
+            </p>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="case-grid">
+
+
+            <!-- =========================================
+                 CASE STUDY 1
+                 REVERSE A STRING
+                 ========================================= -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <div class="icon">
+                        ↔
+                    </div>
+
+                    <div>
+                        <div class="case-number">
+                            CASE STUDY 01
+                        </div>
+
+                        <h2>
+                            Reverse a String
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <p class="description">
+                    Enter a string and reverse its characters
+                    using JavaScript string and array methods.
+                </p>
+
+
+                <label for="reverseInput">
+                    Enter a String
+                </label>
+
+                <input
+                    type="text"
+                    id="reverseInput"
+                    placeholder="Example: Minecraft"
+                >
+
+
+                <button onclick="reverseString()">
+                    ↔ REVERSE STRING
+                </button>
+
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        RESULT
+                    </div>
+
+                    <div id="reverseOutput">
+                        Your reversed string will appear here...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 CASE STUDY 2
+                 COUNT VOWELS
+                 ========================================= -->
+
+            <section class="card">
+
+                <div class="card-header">
+
+                    <div class="icon">
+                        Aa
+                    </div>
+
+                    <div>
+                        <div class="case-number">
+                            CASE STUDY 02
+                        </div>
+
+                        <h2>
+                            Count Vowels
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <p class="description">
+                    Enter a paragraph and find the total number
+                    of vowels present in it.
+                </p>
+
+
+                <label for="vowelInput">
+                    Enter a Paragraph
+                </label>
+
+                <textarea
+                    id="vowelInput"
+                    rows="7"
+                    placeholder="Type your paragraph here..."
+                ></textarea>
+
+
+                <button onclick="countVowels()">
+                    ⚔ COUNT VOWELS
+                </button>
+
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        RESULT
+                    </div>
+
+                    <div id="vowelOutput">
+                        Vowel count will appear here...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+
+        <!-- METHODS USED -->
+
+        <section class="methods">
+
+            <div class="methods-title">
+                ⚒ JavaScript Methods Used
+            </div>
+
+            <div class="method-list">
+
+                <span>split()</span>
+
+                <span>reverse()</span>
+
+                <span>join()</span>
+
+                <span>match()</span>
+
+                <span>length</span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div>
+                ⛏ JavaScript × String Operations
+            </div>
+
+            <small>
+                Case Study 6
+            </small>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
