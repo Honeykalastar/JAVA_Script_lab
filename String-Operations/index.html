@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experiment 6 - JavaScript String Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="experiment-tag">
+                EXPERIMENT 06
+            </div>
+
+            <h1>
+                &lt;/&gt; JavaScript <span>String Lab</span> &lt;/&gt;
+            </h1>
+
+            <p>
+                Perform Various String Operations using JavaScript
+            </p>
+
+        </header>
+
+
+        <!-- INPUT CARD -->
+
+        <section class="input-card">
+
+            <div class="title-row">
+
+                <div class="terminal-icon">
+                    &gt;_
+                </div>
+
+                <div>
+                    <h2>Enter Your String</h2>
+
+                    <p>
+                        Type any string below and explore different string operations.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="stringInput"
+                    placeholder="Example: JavaScript is a powerful language"
+                    oninput="updateCounter()"
+                >
+
+                <button
+                    class="run-button"
+                    onclick="performStringOperations()"
+                >
+                    ⚡ RUN OPERATIONS
+                </button>
+
+            </div>
+
+
+            <!-- LIVE COUNTERS -->
+
+            <div class="stats">
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+                        Aa
+                    </div>
+
+                    <div>
+                        <small>Characters</small>
+                        <strong id="charCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+                        ☷
+                    </div>
+
+                    <div>
+                        <small>Words</small>
+                        <strong id="wordCount">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section class="results-section">
+
+            <div class="results-title">
+
+                <span></span>
+
+                <h2>OPERATION RESULTS</h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div id="output">
+
+                <div class="empty-state">
+
+                    <div class="code-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>Waiting for input...</h3>
+
+                    <p>
+                        Enter a string above and click
+                        <b>Run Operations</b>.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- METHODS -->
+
+        <section class="methods">
+
+            <div class="methods-title">
+                <span>{...}</span>
+
+                <b>Methods Used:</b>
+            </div>
+
+            <div class="method-list">
+
+                <span>length</span>
+
+                <i>|</i>
+
+                <span>toUpperCase()</span>
+
+                <i>|</i>
+
+                <span>toLowerCase()</span>
+
+                <i>|</i>
+
+                <span>substring()</span>
+
+                <i>|</i>
+
+                <span>indexOf()</span>
+
+                <i>|</i>
+
+                <span>split()</span>
+
+                <i>|</i>
+
+                <span>replace()</span>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            JavaScript × String Operations
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
