@@ -1,0 +1,814 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+/* =========================
+   VALORANT THEME
+========================= */
+
+body{
+
+    font-family:"Arial Narrow","Trebuchet MS",Arial,sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,70,85,.12),transparent 25%),
+        radial-gradient(circle at 85% 80%,rgba(255,70,85,.08),transparent 25%),
+        #0f0f0f;
+
+    color:#fff;
+
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:20px;
+
+    padding:40px;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    width:320px;
+
+    height:650px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #101010
+        );
+
+    border-radius:4px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:40px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    border-left:4px solid #ff4655;
+
+}
+
+
+/* RED ANGULAR EFFECT */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:#ff4655;
+
+    opacity:.08;
+
+    transform:rotate(45deg);
+
+    top:-190px;
+
+    right:-170px;
+
+}
+
+
+/* SECOND ANGULAR EFFECT */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border:35px solid #ff4655;
+
+    opacity:.08;
+
+    transform:rotate(45deg);
+
+    bottom:-150px;
+
+    left:-130px;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* TAGLINE */
+
+.tagline{
+
+    color:#ff4655;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* FITZONE */
+
+.hero h1{
+
+    font-family:Impact,"Arial Narrow",Arial,sans-serif;
+
+    font-size:55px;
+
+    line-height:.9;
+
+    letter-spacing:-2px;
+
+    text-transform:uppercase;
+
+}
+
+
+.hero h1 span{
+
+    color:#ff4655;
+
+}
+
+
+.hero-content > p:last-child{
+
+    margin-top:25px;
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   JOIN THE GYM
+========================= */
+
+.form-section{
+
+    width:400px;
+
+    background:#f4f4f4;
+
+    color:#171717;
+
+    border-radius:4px;
+
+    padding:40px;
+
+    flex-shrink:0;
+
+    border-top:4px solid #ff4655;
+
+}
+
+
+/* FORM HEADER */
+
+.form-header{
+
+    margin-bottom:30px;
+
+}
+
+
+.form-header p{
+
+    color:#ff4655;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    margin-bottom:7px;
+
+}
+
+
+.form-header h2{
+
+    font-family:Impact,"Arial Narrow",Arial,sans-serif;
+
+    font-size:30px;
+
+    letter-spacing:.5px;
+
+    margin-bottom:8px;
+
+}
+
+
+.form-header span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+
+.input-row{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+.input-row .input-group{
+
+    width:50%;
+
+}
+
+
+label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:7px;
+
+}
+
+
+input,
+select{
+
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1px solid #d0d0d0;
+
+    border-radius:3px;
+
+    outline:none;
+
+    font-size:14px;
+
+    background:#fff;
+
+    transition:.2s;
+
+}
+
+
+input:focus,
+select:focus{
+
+    border-color:#ff4655;
+
+    background:#fff;
+
+    box-shadow:0 0 0 3px rgba(255,70,85,.12);
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error{
+
+    display:block;
+
+    color:#e63946;
+
+    font-size:11px;
+
+    margin-top:5px;
+
+    min-height:13px;
+
+}
+
+
+/* =========================
+   JOIN BUTTON
+========================= */
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:5px;
+
+    border:none;
+
+    border-radius:3px;
+
+    background:#ff4655;
+
+    color:#fff;
+
+    font-family:"Arial Narrow",Arial,sans-serif;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+button:hover{
+
+    background:#d93645;
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success{
+
+    color:#1f9d55;
+
+    font-size:14px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
+    min-height:18px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.form-footer{
+
+    margin-top:25px;
+
+    padding-top:18px;
+
+    border-top:1px solid #ddd;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#888;
+
+    font-size:12px;
+
+}
+
+
+.form-footer span{
+
+    font-size:18px;
+
+}
+
+
+/* =========================
+   SUCCESS / RECEIPT
+========================= */
+
+#receipt{
+
+    display:none;
+
+    width:400px;
+
+    background:#f4f4f4;
+
+    color:#171717;
+
+    border-radius:4px;
+
+    padding:40px;
+
+    flex-shrink:0;
+
+    border-top:4px solid #ff4655;
+
+}
+
+
+/* RECEIPT HEADER */
+
+.receipt-header{
+
+    text-align:center;
+
+    border-bottom:1px dashed #aaa;
+
+    padding-bottom:20px;
+
+    margin-bottom:15px;
+
+}
+
+
+.receipt-header h3{
+
+    color:#ff4655;
+
+    font-family:Impact,"Arial Narrow",Arial,sans-serif;
+
+    font-size:25px;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+
+}
+
+
+.receipt-header p{
+
+    color:#777;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================
+   RECEIPT DETAILS
+========================= */
+
+.receipt-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:11px 0;
+
+    border-bottom:1px solid #ddd;
+
+    font-size:12px;
+
+}
+
+
+.receipt-row span{
+
+    color:#777;
+
+}
+
+
+.receipt-row strong{
+
+    color:#222;
+
+    text-align:right;
+
+    max-width:60%;
+
+    word-break:break-word;
+
+}
+
+
+/* =========================
+   MEMBERSHIP PLAN
+========================= */
+
+.receipt-plan{
+
+    margin-top:18px;
+
+    padding:13px;
+
+    text-align:center;
+
+    background:#ff4655;
+
+    color:#fff;
+
+    border-radius:3px;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* =========================
+   PRINT BUTTON
+========================= */
+
+.print-button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    background:#171717;
+
+    color:white;
+
+    border:none;
+
+    border-radius:3px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+}
+
+
+.print-button:hover{
+
+    background:#333;
+
+}
+
+
+/* =========================
+   VALORANT DECORATION
+========================= */
+
+.form-section::before,
+#receipt::before{
+
+    content:"";
+
+    display:block;
+
+    position:absolute;
+
+    width:45px;
+
+    height:4px;
+
+    background:#ff4655;
+
+}
+
+
+/* =========================
+   LARGE SCREEN
+========================= */
+
+@media(min-width:1300px){
+
+    .page{
+
+        flex-wrap:nowrap;
+
+    }
+
+}
+
+
+/* =========================
+   MEDIUM SCREEN
+========================= */
+
+@media(max-width:1300px){
+
+    .page{
+
+        flex-wrap:wrap;
+
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .page{
+
+        display:block;
+
+        padding:20px;
+
+    }
+
+
+    .hero{
+
+        width:100%;
+
+        height:300px;
+
+        margin-bottom:20px;
+
+    }
+
+
+    .form-section{
+
+        width:100%;
+
+        margin-bottom:20px;
+
+    }
+
+
+    #receipt{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .page{
+
+        padding:10px;
+
+    }
+
+
+    .hero{
+
+        display:none;
+
+    }
+
+
+    .form-section,
+    #receipt{
+
+        width:100%;
+
+        padding:30px 22px;
+
+    }
+
+
+    .input-row{
+
+        display:block;
+
+    }
+
+
+    .input-row .input-group{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
+@media print{
+
+    body{
+
+        background:white;
+
+    }
+
+
+    .page{
+
+        display:block;
+
+        padding:0;
+
+    }
+
+
+    .hero,
+    .form-section{
+
+        display:none;
+
+    }
+
+
+    #receipt{
+
+        display:block;
+
+        width:100%;
+
+        border:2px solid #222;
+
+        box-shadow:none;
+
+    }
+
+
+    .print-button{
+
+        display:none;
+
+    }
+
+}

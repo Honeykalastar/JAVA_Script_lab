@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>FitZone Gym - Admission</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">TRAIN • SWEAT • GROW</p>
+
+            <h1>FITZONE<br><span>GYM</span></h1>
+
+            <p>Start your fitness journey today.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JOIN THE GYM SECTION -->
+
+    <div class="form-section">
+
+        <div class="form-header">
+
+            <p>MEMBERSHIP</p>
+
+            <h2>Join the Gym</h2>
+
+            <span>Fill in your details to get started.</span>
+
+        </div>
+
+
+        <form id="gymForm">
+
+
+            <div class="input-group">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                >
+
+                <span id="nameError" class="error"></span>
+
+            </div>
+
+
+            <div class="input-row">
+
+
+                <div class="input-group">
+
+                    <label>Age</label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="16 - 60"
+                    >
+
+                    <span id="ageError" class="error"></span>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Mobile Number</label>
+
+                    <input
+                        type="text"
+                        id="mobile"
+                        placeholder="10-digit number"
+                    >
+
+                    <span id="mobileError" class="error"></span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+                <span id="emailError" class="error"></span>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Membership Plan</label>
+
+                <select id="plan">
+
+                    <option value="">
+                        Select your membership
+                    </option>
+
+                    <option>Monthly</option>
+
+                    <option>Quarterly</option>
+
+                    <option>Yearly</option>
+
+                </select>
+
+                <span id="planError" class="error"></span>
+
+            </div>
+
+
+            <button type="submit">
+                JOIN FITZONE
+            </button>
+
+
+            <p id="result" class="success"></p>
+
+
+        </form>
+
+
+        <div class="form-footer">
+
+            <span>💪</span>
+
+            <p>Consistency beats motivation.</p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SUCCESSFUL REGISTRATION / RECEIPT -->
+
+    <div id="receipt"></div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
