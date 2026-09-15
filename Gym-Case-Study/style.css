@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Press Start 2P', cursive;
+
+    background-image:
+        linear-gradient(rgba(35,20,45,0.45), rgba(35,20,45,0.45)),
+        url("gymimage.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+
+/* Main Form */
+
+.container{
+    width:520px;
+
+    background:rgba(255,245,252,0.96);
+
+    padding:30px;
+
+    border-radius:18px;
+
+    border:4px solid #d85b9e;
+
+    box-shadow:
+        0 0 0 5px rgba(255,255,255,0.7),
+        0 12px 35px rgba(50,20,50,0.45);
+
+    backdrop-filter:blur(4px);
+}
+
+
+/* Heading */
+
+h2{
+    text-align:center;
+
+    color:#71345d;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+    text-shadow:2px 2px 0px #f3a6ca;
+}
+
+
+/* Form Rows */
+
+.form-row{
+    display:grid;
+
+    grid-template-columns:155px 1fr;
+
+    border:2px solid #d98ab5;
+
+    border-bottom:none;
+
+    min-height:65px;
+
+    background:rgba(255,255,255,0.82);
+}
+
+.form-row:last-of-type{
+    border-bottom:2px solid #d98ab5;
+}
+
+
+/* Labels */
+
+.form-row > label{
+    padding:15px;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+    font-weight:bold;
+
+    color:#71345d;
+
+    background:#f7d8e9;
+
+    border-right:2px solid #d98ab5;
+}
+
+
+/* Right Side */
+
+.form-row > div{
+    padding:12px;
+}
+
+
+/* Text Input */
+
+input[type="text"],
+select{
+    width:100%;
+
+    padding:12px;
+
+    border:2px solid #c98aaa;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:9px;
+
+    color:#513248;
+
+    background:#fffafd;
+
+    transition:0.2s;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus{
+    border-color:#8fc400;
+
+    box-shadow:0 0 0 3px rgba(143,196,0,0.2);
+}
+
+
+/* Radio Buttons */
+
+input[type="radio"]{
+    margin-right:7px;
+
+    accent-color:#8fc400;
+}
+
+.form-row input[type="radio"] + br{
+    margin-bottom:8px;
+}
+
+
+/* Checkbox */
+
+.check{
+    display:block;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:9px;
+
+    line-height:1.8;
+
+    margin-bottom:7px;
+
+    color:#513248;
+
+    cursor:pointer;
+}
+
+.check:last-child{
+    margin-bottom:0;
+}
+
+input[type="checkbox"]{
+    margin-right:7px;
+
+    accent-color:#8fc400;
+}
+
+
+/* Athletic Section */
+
+.athletic{
+    margin-top:16px;
+
+    padding:16px;
+
+    background:rgba(255,255,255,0.88);
+
+    border:2px solid #d98ab5;
+
+    border-radius:10px;
+}
+
+.athletic label{
+    display:block;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    color:#71345d;
+
+    margin-bottom:10px;
+}
+
+
+/* Textarea */
+
+textarea{
+    width:100%;
+
+    height:105px;
+
+    padding:12px;
+
+    border:2px solid #c98aaa;
+
+    border-radius:8px;
+
+    resize:none;
+
+    outline:none;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:9px;
+
+    line-height:1.7;
+
+    color:#513248;
+
+    background:#fffafd;
+}
+
+
+/* Error */
+
+.error{
+    display:block;
+
+    color:#d62962;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:7px;
+
+    line-height:1.6;
+
+    margin-top:6px;
+
+    min-height:12px;
+}
+
+
+/* Submit Button */
+
+button{
+    width:100%;
+
+    padding:16px;
+
+    margin-top:18px;
+
+    border:3px solid #719900;
+
+    border-radius:9px;
+
+    background:#96cf00;
+
+    color:#ffffff;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 0 #668f00;
+
+    transition:0.15s;
+}
+
+button:hover{
+    background:#a8df0b;
+}
+
+button:active{
+    transform:translateY(4px);
+
+    box-shadow:0 1px 0 #668f00;
+}
+
+
+/* Success Message */
+
+#result{
+    text-align:center;
+
+    color:#5d8d00;
+
+    font-family:'Press Start 2P', cursive;
+
+    font-size:9px;
+
+    line-height:1.8;
+
+    margin-top:16px;
+
+    min-height:18px;
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    body{
+        padding:15px;
+
+        align-items:flex-start;
+    }
+
+    .container{
+        width:100%;
+
+        margin-top:20px;
+
+        padding:20px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .form-row > label{
+        border-right:none;
+
+        border-bottom:2px solid #d98ab5;
+    }
+
+    h2{
+        font-size:17px;
+    }
+
+}

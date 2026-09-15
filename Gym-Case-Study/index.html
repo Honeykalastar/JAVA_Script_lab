@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Gym Admission Form</h2>
+
+    <form id="gymForm">
+
+        <div class="form-row">
+            <label>Name</label>
+            <div>
+                <input type="text" id="name">
+                <span id="nameError" class="error"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label>Sex</label>
+            <div>
+                <input type="radio" name="sex" value="Male"> Male
+                <br>
+                <input type="radio" name="sex" value="Female"> Female
+                <span id="sexError" class="error"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label>Eye color</label>
+            <div>
+                <select id="eyeColor">
+                    <option value="">Select eye color</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Black">Black</option>
+                </select>
+                <span id="eyeError" class="error"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label>Check all that apply</label>
+            <div>
+                <label class="check">
+                    <input type="checkbox" id="tall">
+                    Over 6 feet tall
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" id="weight">
+                    Over 200 pounds
+                </label>
+            </div>
+        </div>
+
+        <div class="athletic">
+            <label>Describe your athletic ability:</label>
+
+            <textarea id="ability"></textarea>
+
+            <span id="abilityError" class="error"></span>
+        </div>
+
+        <button type="submit">Enter my information</button>
+
+        <p id="result"></p>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
