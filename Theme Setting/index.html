@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Preference</title>
+
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: "Press Start 2P", monospace;
+
+            background-color: #eef2f7;
+            color: #1f2937;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px;
+
+            transition: 0.3s;
+        }
+
+
+        /* Main Card */
+
+        .container {
+            width: 520px;
+            max-width: 100%;
+
+            background-color: white;
+
+            border: 2px solid #d9dee7;
+            border-radius: 18px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+
+        /* Heading */
+
+        h1 {
+            font-size: 24px;
+            line-height: 1.6;
+
+            margin: 10px 0 20px;
+
+            color: #172033;
+        }
+
+
+        .subtitle {
+            font-size: 9px;
+            line-height: 2;
+
+            color: #6b7280;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* Theme Icon */
+
+        .theme-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 25px;
+
+            border-radius: 50%;
+
+            background-color: #eef2ff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 30px;
+        }
+
+
+        /* Theme Buttons */
+
+        .theme-buttons {
+            display: flex;
+            gap: 15px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .theme-btn {
+            flex: 1;
+
+            padding: 22px 10px;
+
+            background-color: #f8fafc;
+
+            border: 2px solid #dfe4ec;
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-family: "Press Start 2P", monospace;
+            font-size: 9px;
+
+            color: #273246;
+
+            transition: 0.2s;
+        }
+
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+
+            border-color: #6477ff;
+
+            background-color: #f1f4ff;
+        }
+
+
+        .theme-btn span {
+            display: block;
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* Clear Button */
+
+        #clearBtn {
+            width: 100%;
+
+            padding: 16px;
+
+            margin-top: 2px;
+
+            background-color: white;
+
+            border: 2px solid #ffb4b4;
+
+            border-radius: 10px;
+
+            color: #dc2626;
+
+            font-family: "Press Start 2P", monospace;
+            font-size: 8px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        #clearBtn:hover {
+            background-color: #fff1f1;
+        }
+
+
+        /* Storage Sections */
+
+        .storage-section {
+            margin-top: 25px;
+
+            padding: 20px;
+
+            text-align: left;
+
+            border-radius: 12px;
+
+            background-color: #f8fafc;
+
+            border: 1px solid #e1e5eb;
+        }
+
+
+        .storage-title {
+            font-size: 10px;
+
+            margin-bottom: 14px;
+
+            color: #263449;
+        }
+
+
+        .storage-text {
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            margin: 0;
+
+            color: #4b5563;
+
+            line-height: 1.5;
+        }
+
+
+        /* Status Message */
+
+        #message {
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            background-color: #ecfdf3;
+
+            border: 1px solid #b7ebc9;
+
+            color: #16803c;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* Dark Theme */
+
+        body.dark {
+            background-color: #151923;
+
+            color: white;
+        }
+
+
+        body.dark .container {
+            background-color: #202633;
+
+            border-color: #343c4c;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+
+        body.dark h1 {
+            color: white;
+        }
+
+
+        body.dark .subtitle {
+            color: #aeb6c5;
+        }
+
+
+        body.dark .theme-icon {
+            background-color: #30384a;
+        }
+
+
+        body.dark .theme-btn {
+            background-color: #282f3d;
+
+            border-color: #414a5c;
+
+            color: white;
+        }
+
+
+        body.dark .theme-btn:hover {
+            background-color: #323b4e;
+
+            border-color: #7c8cff;
+        }
+
+
+        body.dark #clearBtn {
+            background-color: #202633;
+
+            border-color: #e76f6f;
+
+            color: #ff8585;
+        }
+
+
+        body.dark #clearBtn:hover {
+            background-color: #302326;
+        }
+
+
+        body.dark .storage-section {
+            background-color: #282f3d;
+
+            border-color: #3b4557;
+        }
+
+
+        body.dark .storage-title {
+            color: white;
+        }
+
+
+        body.dark .storage-text {
+            color: #c1c8d4;
+        }
+
+
+        body.dark #message {
+            background-color: #193525;
+
+            border-color: #2d6642;
+
+            color: #72dc98;
+        }
+
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .theme-buttons {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- Icon -->
+        <div class="theme-icon" id="themeIcon">
+            ☀
+        </div>
+
+
+        <!-- Heading -->
+        <h1>Theme Preference</h1>
+
+
+        <p class="subtitle">
+            Choose your preferred theme.<br>
+            Your choice will be remembered.
+        </p>
+
+
+        <!-- Theme Buttons -->
+        <div class="theme-buttons">
+
+            <button
+                class="theme-btn"
+                onclick="setTheme('light')">
+
+                <span>☀</span>
+
+                Light Theme
+
+            </button>
+
+
+            <button
+                class="theme-btn"
+                onclick="setTheme('dark')">
+
+                <span>☾</span>
+
+                Dark Theme
+
+            </button>
+
+        </div>
+
+
+        <!-- Clear Preference -->
+        <button
+            id="clearBtn"
+            onclick="clearTheme()">
+
+            ↻ &nbsp; Clear Preference
+
+        </button>
+
+
+        <!-- Main Status -->
+        <p id="message">
+            No theme selected.
+        </p>
+
+
+        <!-- Local Storage -->
+        <div class="storage-section">
+
+            <div class="storage-title">
+                LOCAL STORAGE
+            </div>
+
+            <p
+                id="localMessage"
+                class="storage-text">
+
+                No theme saved.
+
+            </p>
+
+        </div>
+
+
+        <!-- Session Storage -->
+        <div class="storage-section">
+
+            <div class="storage-title">
+                SESSION STORAGE
+            </div>
+
+            <p
+                id="sessionMessage"
+                class="storage-text">
+
+                No session theme saved.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        // -----------------------------------------
+        // LOAD SAVED THEME WHEN PAGE OPENS
+        // -----------------------------------------
+
+        window.onload = function () {
+
+            // Get Local Storage
+            let localTheme =
+                localStorage.getItem("theme");
+
+            // Get Session Storage
+            let sessionTheme =
+                sessionStorage.getItem("currentTheme");
+
+
+            // Local Storage has priority
+            if (localTheme) {
+
+                applyTheme(localTheme);
+
+                document.getElementById("message").innerText =
+                    "Theme loaded: " +
+                    localTheme;
+
+                document.getElementById("localMessage").innerText =
+                    "Saved Theme: " +
+                    localTheme;
+            }
+
+
+            // If Local Storage is empty,
+            // check Session Storage
+            else if (sessionTheme) {
+
+                applyTheme(sessionTheme);
+
+                document.getElementById("message").innerText =
+                    "Session theme loaded: " +
+                    sessionTheme;
+            }
+
+
+            // Display Session Storage
+            if (sessionTheme) {
+
+                document.getElementById("sessionMessage").innerText =
+                    "Current Session Theme: " +
+                    sessionTheme;
+            }
+
+        };
+
+
+        // -----------------------------------------
+        // SET THEME
+        // -----------------------------------------
+
+        function setTheme(theme) {
+
+            // Apply theme
+            applyTheme(theme);
+
+
+            // Save in Local Storage
+            localStorage.setItem(
+                "theme",
+                theme
+            );
+
+
+            // Save in Session Storage
+            sessionStorage.setItem(
+                "currentTheme",
+                theme
+            );
+
+
+            // Main message
+            document.getElementById("message").innerText =
+                "Theme saved: " +
+                theme;
+
+
+            // Local Storage message
+            document.getElementById("localMessage").innerText =
+                "Saved Theme: " +
+                localStorage.getItem("theme");
+
+
+            // Session Storage message
+            document.getElementById("sessionMessage").innerText =
+                "Current Session Theme: " +
+                sessionStorage.getItem("currentTheme");
+
+        }
+
+
+        // -----------------------------------------
+        // APPLY THEME
+        // -----------------------------------------
+
+        function applyTheme(theme) {
+
+            let icon =
+                document.getElementById("themeIcon");
+
+
+            if (theme === "dark") {
+
+                document.body.classList.add("dark");
+
+                icon.innerText = "☾";
+
+            }
+
+            else {
+
+                document.body.classList.remove("dark");
+
+                icon.innerText = "☀";
+
+            }
+
+        }
+
+
+        // -----------------------------------------
+        // CLEAR PREFERENCE
+        // -----------------------------------------
+
+        function clearTheme() {
+
+            // Remove Local Storage
+            localStorage.removeItem("theme");
+
+
+            // Remove Session Storage
+            sessionStorage.removeItem("currentTheme");
+
+
+            // Return to Light Theme
+            applyTheme("light");
+
+
+            // Main message
+            document.getElementById("message").innerText =
+                "Theme preference cleared.";
+
+
+            // Local Storage
+            document.getElementById("localMessage").innerText =
+                "No theme saved.";
+
+
+            // Session Storage
+            document.getElementById("sessionMessage").innerText =
+                "No session theme saved.";
+
+        }
+
+    </script>
+
+</body>
+</html>
