@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#eef0ff">
+    <meta name="description" content="A class countdown scheduler to plan classes and track study sessions.">
+
+    <title>Class Countdown Scheduler</title>
+
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="js/app.js"></script>
+</head>
+
+<body>
+
+    <canvas id="fireworksCanvas" aria-hidden="true"></canvas>
+
+    <div class="app-container">
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="brand-icon">🎓</div>
+
+            <div class="brand-content">
+                <h1>Class Countdown Scheduler</h1>
+                <p>Plan your classes. Track your focus. Celebrate every finish.</p>
+            </div>
+        </header>
+
+
+        <!-- SUMMARY CARDS -->
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-label">
+                    <span>📚</span>
+                    <span>Scheduled Classes</span>
+                </div>
+
+                <h2 id="scheduledCount">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-label">
+                    <span>✅</span>
+                    <span>Completed Sessions</span>
+                </div>
+
+                <h2 id="completedCount">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-label">
+                    <span>⏱️</span>
+                    <span>Actual Study Time</span>
+                </div>
+
+                <h2 id="totalStudyTime">0m</h2>
+            </article>
+
+        </section>
+
+
+        <!-- BULK SCHEDULER -->
+        <section class="panel bulk-panel">
+
+            <div class="panel-heading">
+                <div>
+                    <h2>Bulk Class Scheduler</h2>
+                    <p>Add your entire timetable at once.</p>
+                </div>
+
+                <button id="quickAddBtn" class="badge-button" type="button">
+                    QUICK ADD
+                </button>
+            </div>
+
+            <form id="bulkForm">
+
+                <label for="bulkInput">One class per line: Subject, duration</label>
+
+                <textarea
+                    id="bulkInput"
+                    placeholder="Mathematics, 45&#10;Physics, 1:00:00&#10;JavaScript, 00:25:00"
+                    spellcheck="false"
+                ></textarea>
+
+                <p class="helper-text">
+                    Duration examples: 45 (minutes), 1:30:00 (hours:minutes:seconds),
+                    or 00:00:45.
+                </p>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        + Add All Classes
+                    </button>
+
+                    <button id="clearInputBtn" class="secondary-button" type="button">
+                        Clear Input
+                    </button>
+                </div>
+
+                <p id="formMessage" class="form-message" role="status"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- MAIN WORKSPACE -->
+        <section class="workspace-grid">
+
+            <!-- SCHEDULE LIST -->
+            <section class="panel schedule-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Your Schedule</h2>
+                        <p>Select a class to start its timer.</p>
+                    </div>
+
+                    <span id="classCountBadge" class="badge-button">0 CLASSES</span>
+                </div>
+
+                <div id="scheduleList" class="schedule-list">
+
+                    <div class="empty-state">
+                        <span>📖</span>
+                        <h3>No classes scheduled</h3>
+                        <p>Add your classes above to get started.</p>
+                    </div>
+
+                </div>
+
+                <div class="schedule-actions">
+
+                    <button id="startNextBtn" class="primary-button" type="button">
+                        ▶ Start Next Class
+                    </button>
+
+                    <button id="clearScheduleBtn" class="danger-outline-button" type="button">
+                        Clear Schedule
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- CURRENT SESSION -->
+            <section class="panel timer-panel">
+
+                <span class="section-badge">CURRENT SESSION</span>
+
+                <h2 id="currentSubject">No Class Selected</h2>
+
+                <p id="timerStatus" class="timer-status">
+                    Select a class to begin.
+                </p>
+
+                <div
+                    id="timerDisplay"
+                    class="timer-display"
+                    role="timer"
+                    aria-live="off"
+                >00:00:00</div>
+
+                <div
+                    id="timerProgress"
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Countdown progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                >
+                    <div id="timerProgressBar" class="progress-bar"></div>
+                </div>
+
+                <div class="timer-controls">
+
+                    <button id="startBtn" class="primary-button" type="button">
+                        ▶ Start
+                    </button>
+
+                    <button id="pauseBtn" class="secondary-button" type="button" disabled>
+                        Ⅱ Pause
+                    </button>
+
+                    <button id="endBtn" class="danger-button" type="button" disabled>
+                        ■ End Session
+                    </button>
+
+                </div>
+
+                <p class="timer-note">
+                    End Session records your actual time.
+                    Resetting the timer is not required.
+                </p>
+
+                <div id="celebration" class="celebration-message" hidden>
+
+                    <h3>🎉 Session Complete!</h3>
+
+                    <p>Great work! You've finished your scheduled class.</p>
+
+                    <button id="dismissCelebrationBtn" class="secondary-button" type="button">
+                        Continue
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- SESSION HISTORY -->
+        <section class="panel history-panel">
+
+            <div class="panel-heading">
+                <div>
+                    <h2>Session History</h2>
+                    <p>Review how long each class actually lasted.</p>
+                </div>
+
+                <button id="clearHistoryBtn" class="danger-outline-button" type="button">
+                    Clear History
+                </button>
+            </div>
+
+            <div class="history-summary">
+
+                <div>
+                    <span>Total recorded sessions</span>
+                    <strong id="historySessionCount">0</strong>
+                </div>
+
+                <div>
+                    <span>Total actual time</span>
+                    <strong id="historyStudyTime">0m</strong>
+                </div>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Started</th>
+                            <th>Ended</th>
+                            <th>Planned</th>
+                            <th>Actual Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historyTableBody">
+                        <tr>
+                            <td colspan="7" class="table-empty">
+                                No sessions recorded yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="app-footer">
+            <p>Class Countdown Scheduler · Built with HTML, CSS and JavaScript ES6</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
