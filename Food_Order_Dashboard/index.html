@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Food Order Dashboard</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+
+            <h1>Online Food Order Dashboard</h1>
+
+            <p>
+                Manage and monitor today's restaurant orders
+            </p>
+
+        </div>
+
+        <!-- Order Management -->
+        <div class="top-section">
+
+            <h2>Order Management</h2>
+
+            <button id="viewOrders" type="button">
+                View Orders
+            </button>
+
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+
+            <!-- Total Orders -->
+            <div class="card">
+
+                <div class="card-title">
+                    Total Orders
+                </div>
+
+                <div class="card-value" id="totalOrders">
+                    0
+                </div>
+
+            </div>
+
+            <!-- Total Sales -->
+            <div class="card">
+
+                <div class="card-title">
+                    Total Sales
+                </div>
+
+                <div class="card-value">
+                    ₹<span id="totalSales">0</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Orders Table -->
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Food Item</th>
+                        <th>Quantity</th>
+                        <th>Total Amount</th>
+                        <th>Order Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="orderTableBody">
+                    <!-- Orders will be inserted here by script.js -->
+                </tbody>
+
+            </table>
+
+            <!-- Status / Error Message -->
+            <div id="message" role="status" aria-live="polite">
+                Click "View Orders" to load today's orders.
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

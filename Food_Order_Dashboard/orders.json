@@ -1,0 +1,163 @@
+
+[
+    {
+        "orderId": 101,
+        "customerName": "Rahul Sharma",
+        "foodItem": "Pizza",
+        "quantity": 2,
+        "totalAmount": 500,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 102,
+        "customerName": "Priya Patil",
+        "foodItem": "Burger",
+        "quantity": 1,
+        "totalAmount": 250,
+        "status": "Ready"
+    },
+    {
+        "orderId": 103,
+        "customerName": "Aman Verma",
+        "foodItem": "Chicken Biryani",
+        "quantity": 2,
+        "totalAmount": 600,
+        "status": "Delivered"
+    },
+    {
+        "orderId": 104,
+        "customerName": "Sneha Joshi",
+        "foodItem": "White Sauce Pasta",
+        "quantity": 1,
+        "totalAmount": 350,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 105,
+        "customerName": "Rohan Deshmukh",
+        "foodItem": "Paneer Tikka",
+        "quantity": 2,
+        "totalAmount": 440,
+        "status": "Ready"
+    },
+    {
+        "orderId": 106,
+        "customerName": "Ananya Gupta",
+        "foodItem": "Veg Sandwich",
+        "quantity": 3,
+        "totalAmount": 360,
+        "status": "Delivered"
+    },
+    {
+        "orderId": 107,
+        "customerName": "Karan Mehta",
+        "foodItem": "French Fries",
+        "quantity": 2,
+        "totalAmount": 200,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 108,
+        "customerName": "Neha Kulkarni",
+        "foodItem": "Masala Dosa",
+        "quantity": 2,
+        "totalAmount": 300,
+        "status": "Delivered"
+    },
+    {
+        "orderId": 109,
+        "customerName": "Aditya Singh",
+        "foodItem": "Cheese Burger",
+        "quantity": 2,
+        "totalAmount": 500,
+        "status": "Ready"
+    },
+    {
+        "orderId": 110,
+        "customerName": "Isha Kapoor",
+        "foodItem": "Chocolate Brownie",
+        "quantity": 3,
+        "totalAmount": 450,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 111,
+        "customerName": "Siddharth Rao",
+        "foodItem": "Margherita Pizza",
+        "quantity": 1,
+        "totalAmount": 299,
+        "status": "Delivered"
+    },
+    {
+        "orderId": 112,
+        "customerName": "Pooja Nair",
+        "foodItem": "Veg Fried Rice",
+        "quantity": 2,
+        "totalAmount": 320,
+        "status": "Ready"
+    },
+    {
+        "orderId": 113,
+        "customerName": "Arjun Pawar",
+        "foodItem": "Chicken Sandwich",
+        "quantity": 1,
+        "totalAmount": 220,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 114,
+        "customerName": "Meera Shah",
+        "foodItem": "Paneer Butter Masala",
+        "quantity": 2,
+        "totalAmount": 560,
+        "status": "Delivered"
+    },
+    {
+        "orderId": 115,
+        "customerName": "Vikram Jadhav",
+        "foodItem": "Cold Coffee",
+        "quantity": 3,
+        "totalAmount": 360,
+        "status": "Ready"
+    },
+    {
+        "orderId": 116,
+        "customerName": "Kavya Mishra",
+        "foodItem": "Veg Manchurian",
+        "quantity": 2,
+        "totalAmount": 340,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 117,
+        "customerName": "Sahil Khan",
+        "foodItem": "Chicken Burger",
+        "quantity": 2,
+        "totalAmount": 460,
+        "status": "Delivered"
+    },
+    {
+        "orderId": 118,
+        "customerName": "Riya Sinha",
+        "foodItem": "Garlic Bread",
+        "quantity": 1,
+        "totalAmount": 180,
+        "status": "Ready"
+    },
+    {
+        "orderId": 119,
+        "customerName": "Dev Malhotra",
+        "foodItem": "Veg Thali",
+        "quantity": 2,
+        "totalAmount": 500,
+        "status": "Preparing"
+    },
+    {
+        "orderId": 120,
+        "customerName": "Aarohi More",
+        "foodItem": "Ice Cream Sundae",
+        "quantity": 2,
+        "totalAmount": 280,
+        "status": "Delivered"
+    }
+]
