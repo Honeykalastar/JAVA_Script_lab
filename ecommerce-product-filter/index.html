@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kharidi - Tumchi Everyday Shopping</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <div class="header-left">
+
+        <div class="brand">
+            <div class="brand-title">Kharidi</div>
+            <div class="brand-tagline">Tumchi Everyday Shopping</div>
+        </div>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products, brands ani more..."
+        >
+
+        <button id="searchButton">
+            🔍
+        </button>
+
+    </div>
+
+
+    <!-- Header Actions -->
+
+    <div class="header-actions">
+
+        <button class="header-btn" id="wishlistButton">
+            ❤️
+            <span>Wishlist</span>
+            <b id="wishlistCount">0</b>
+        </button>
+
+        <button class="header-btn" id="moreButton">
+            ⋮
+            <span>More</span>
+        </button>
+
+        <button class="cart-btn" id="cartButton">
+            🛒
+            <span>Cart</span>
+            <b id="cartCount">0</b>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= CATEGORY BAR ================= -->
+
+<nav class="category-strip">
+
+    <button class="category-btn active" data-category="All">
+        All
+    </button>
+
+    <button class="category-btn" data-category="Electronics">
+        Electronics
+    </button>
+
+    <button class="category-btn" data-category="Fashion">
+        Fashion
+    </button>
+
+    <button class="category-btn" data-category="Books">
+        Books
+    </button>
+
+    <button class="category-btn" data-category="Home">
+        Home
+    </button>
+
+    <button class="category-btn" data-category="Grocery">
+        Grocery
+    </button>
+
+    <button class="category-btn" data-category="Beauty">
+        Beauty
+    </button>
+
+    <button class="category-btn" data-category="Sports">
+        Sports
+    </button>
+
+    <button class="category-btn" data-category="Toys">
+        Toys
+    </button>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            KHARIDI SPECIAL
+        </p>
+
+        <h1>
+            Tumchi Everyday Shopping,
+            <br>
+            Ekach Thikani.
+        </h1>
+
+        <p>
+            Electronics pasun Fashion paryant,
+            sagla kahi ekach jagi.
+        </p>
+
+        <button class="primary-btn" onclick="scrollToProducts()">
+            Kharidi Kara →
+        </button>
+
+    </div>
+
+
+    <div class="hero-cards">
+
+        <div class="hero-card">
+            <span>📱</span>
+            <strong>Electronics</strong>
+            <small>Latest gadgets</small>
+        </div>
+
+        <div class="hero-card">
+            <span>👕</span>
+            <strong>Fashion</strong>
+            <small>Style & comfort</small>
+        </div>
+
+        <div class="hero-card">
+            <span>🏠</span>
+            <strong>Home</strong>
+            <small>Make it better</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<main class="products-section" id="productsSection">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="section-label">
+                KHARIDI COLLECTION
+            </p>
+
+            <h2>
+                Today's Picks
+            </h2>
+
+            <p id="resultText">
+                Showing all products
+            </p>
+        </div>
+
+        <button class="outline-btn" onclick="clearFilters()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="shop-layout">
+
+
+        <!-- ================= FILTER SIDEBAR ================= -->
+
+        <aside class="filter-sidebar">
+
+            <div class="filter-header">
+                <h3>Filters</h3>
+
+                <button id="clearFilters">
+                    Clear All
+                </button>
+            </div>
+
+
+            <!-- Search -->
+
+            <div class="filter-group">
+
+                <label>
+                    Search
+                </label>
+
+                <input
+                    type="text"
+                    id="sideSearch"
+                    placeholder="Product name..."
+                >
+
+            </div>
+
+
+            <!-- Category -->
+
+            <div class="filter-group">
+
+                <label>
+                    Category
+                </label>
+
+                <select id="categoryFilter">
+
+                    <option value="All">
+                        All Categories
+                    </option>
+
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+
+                    <option value="Fashion">
+                        Fashion
+                    </option>
+
+                    <option value="Books">
+                        Books
+                    </option>
+
+                    <option value="Home">
+                        Home
+                    </option>
+
+                    <option value="Grocery">
+                        Grocery
+                    </option>
+
+                    <option value="Beauty">
+                        Beauty
+                    </option>
+
+                    <option value="Sports">
+                        Sports
+                    </option>
+
+                    <option value="Toys">
+                        Toys
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Price -->
+
+            <div class="filter-group">
+
+                <label>
+                    Price Range
+                </label>
+
+                <select id="priceFilter">
+
+                    <option value="all">
+                        All Prices
+                    </option>
+
+                    <option value="0-1000">
+                        Under ₹1,000
+                    </option>
+
+                    <option value="1000-5000">
+                        ₹1,000 - ₹5,000
+                    </option>
+
+                    <option value="5000-20000">
+                        ₹5,000 - ₹20,000
+                    </option>
+
+                    <option value="20000+">
+                        Above ₹20,000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Rating -->
+
+            <div class="filter-group">
+
+                <label>
+                    Customer Rating
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="rating" value="0" checked>
+                    All Ratings
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="rating" value="4">
+                    ⭐ 4+ & above
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="rating" value="4.5">
+                    ⭐ 4.5+ & above
+                </label>
+
+            </div>
+
+
+            <!-- Sort -->
+
+            <div class="filter-group">
+
+                <label>
+                    Sort By
+                </label>
+
+                <select id="sortFilter">
+
+                    <option value="default">
+                        Recommended
+                    </option>
+
+                    <option value="priceLow">
+                        Price: Low to High
+                    </option>
+
+                    <option value="priceHigh">
+                        Price: High to Low
+                    </option>
+
+                    <option value="ratingHigh">
+                        Rating: High to Low
+                    </option>
+
+                    <option value="name">
+                        Name: A to Z
+                    </option>
+
+                </select>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= PRODUCT GRID ================= -->
+
+        <section class="product-area">
+
+            <div id="productGrid" class="product-grid"></div>
+
+
+            <div id="noProducts" class="no-products">
+
+                <div>
+                    🔎
+                </div>
+
+                <h3>
+                    Product nahi sapadla
+                </h3>
+
+                <p>
+                    Search किंवा filters change करून पुन्हा try kara.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="clearFilters()"
+                >
+                    View All Products
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature-item">
+
+        <span>🚚</span>
+
+        <div>
+            <strong>Fast Delivery</strong>
+            <p>Quick delivery at your doorstep</p>
+        </div>
+
+    </div>
+
+
+    <div class="feature-item">
+
+        <span>🔒</span>
+
+        <div>
+            <strong>Safe Shopping</strong>
+            <p>Simple and secure experience</p>
+        </div>
+
+    </div>
+
+
+    <div class="feature-item">
+
+        <span>↩️</span>
+
+        <div>
+            <strong>Easy Returns</strong>
+            <p>Shopping made tension-free</p>
+        </div>
+
+    </div>
+
+
+    <div class="feature-item">
+
+        <span>💬</span>
+
+        <div>
+            <strong>Help & Support</strong>
+            <p>We're here when you need us</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OVERLAY ================= -->
+
+<div id="overlay" class="overlay"></div>
+
+
+<!-- ================= WISHLIST DRAWER ================= -->
+
+<aside id="wishlistDrawer" class="side-drawer wishlist-drawer">
+
+    <div class="drawer-header">
+
+        <div>
+            <h2>❤️ Wishlist</h2>
+
+            <p>
+                Tumche favourite products
+            </p>
+        </div>
+
+        <button id="closeWishlist">
+            ×
+        </button>
+
+    </div>
+
+
+    <div id="wishlistItems" class="wishlist-items">
+
+        <!-- Wishlist items added by JavaScript -->
+
+    </div>
+
+
+    <div id="emptyWishlist" class="empty-state">
+
+        <div>
+            ❤️
+        </div>
+
+        <h3>
+            Wishlist empty aahe
+        </h3>
+
+        <p>
+            Favourite products save kara ani nantar easily shop kara.
+        </p>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= CART DRAWER ================= -->
+
+<aside id="cartDrawer" class="side-drawer cart-drawer">
+
+    <div class="drawer-header">
+
+        <div>
+
+            <h2>
+                🛒 Your Cart
+            </h2>
+
+            <p>
+                <span id="drawerCount">0</span> items
+            </p>
+
+        </div>
+
+        <button id="closeCart">
+            ×
+        </button>
+
+    </div>
+
+
+    <div id="cartItems" class="cart-items">
+
+        <!-- Cart items added by JavaScript -->
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="price-line">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong id="subtotal">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <div class="price-line">
+
+            <span>
+                Delivery
+            </span>
+
+            <strong class="free-text">
+                FREE
+            </strong>
+
+        </div>
+
+
+        <div class="total-line">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="total">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <button
+            id="checkoutButton"
+            class="checkout-btn"
+        >
+            Proceed to Checkout →
+        </button>
+
+
+        <button
+            id="clearCart"
+            class="clear-cart-btn"
+        >
+            Clear Cart
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div id="checkoutModal" class="modal">
+
+    <div class="checkout-box">
+
+        <div class="checkout-header">
+
+            <div>
+
+                <p class="section-label">
+                    KHARIDI CHECKOUT
+                </p>
+
+                <h2>
+                    Order Summary
+                </h2>
+
+            </div>
+
+            <button id="closeCheckout">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Checkout Products -->
+
+        <div id="checkoutItems" class="checkout-items">
+
+            <!-- Products inserted by JavaScript -->
+
+        </div>
+
+
+        <!-- Price Details -->
+
+        <div class="checkout-price-box">
+
+            <h3>
+                Price Details
+            </h3>
+
+
+            <div class="checkout-row">
+
+                <span>
+                    Product Total
+                </span>
+
+                <strong id="checkoutSubtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong class="free-text">
+                    FREE
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-row discount-row">
+
+                <span>
+                    Kharidi Discount
+                </span>
+
+                <strong id="checkoutDiscount">
+                    - ₹0
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="checkout-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong id="checkoutTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Demo Payment -->
+
+        <div class="payment-note">
+
+            <span>🔐</span>
+
+            <div>
+
+                <strong>
+                    Demo Checkout
+                </strong>
+
+                <p>
+                    This is a class project.
+                    No real payment will be processed.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="checkout-actions">
+
+            <button
+                id="backToCart"
+                class="outline-btn"
+            >
+                ← Back to Cart
+            </button>
+
+
+            <button
+                id="placeOrderButton"
+                class="primary-btn"
+            >
+                Place Order ✓
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= RECEIPT MODAL ================= -->
+
+<div id="receiptModal" class="modal">
+
+    <div class="receipt-box">
+
+        <div class="receipt-top">
+
+            <div class="receipt-success">
+                ✓
+            </div>
+
+            <p class="section-label">
+                KHARIDI
+            </p>
+
+            <h2>
+                Order Confirm Zala! 🎉
+            </h2>
+
+            <p>
+                Thank you for shopping with Kharidi.
+            </p>
+
+        </div>
+
+
+        <!-- Order Information -->
+
+        <div class="order-info">
+
+            <div>
+
+                <span>
+                    Order ID
+                </span>
+
+                <strong id="receiptOrderId">
+                    KH000000
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Order Date
+                </span>
+
+                <strong id="receiptDate">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Payment
+                </span>
+
+                <strong>
+                    Demo Payment
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="status-confirmed">
+                    Confirmed
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Receipt Items -->
+
+        <div class="receipt-section">
+
+            <h3>
+                Order Breakdown
+            </h3>
+
+            <div id="receiptItems">
+
+                <!-- Receipt products inserted by JS -->
+
+            </div>
+
+        </div>
+
+
+        <!-- Receipt Total -->
+
+        <div class="receipt-total-box">
+
+            <div>
+
+                <span>
+                    Product Total
+                </span>
+
+                <strong id="receiptSubtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Discount
+                </span>
+
+                <strong id="receiptDiscount">
+                    - ₹0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong class="free-text">
+                    FREE
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="receipt-grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong id="receiptTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Receipt Actions -->
+
+        <div class="receipt-actions">
+
+            <button
+                id="printReceipt"
+                class="outline-btn"
+            >
+                🖨️ Print Receipt
+            </button>
+
+            <button
+                id="continueShopping"
+                class="primary-btn"
+            >
+                Continue Shopping →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PRODUCT DETAILS MODAL ================= -->
+
+<div id="productModal" class="modal">
+
+    <div id="modalContent" class="product-modal-box">
+
+        <!-- Product details inserted by JavaScript -->
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast" class="toast">
+    Product added successfully!
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        <h2>
+            Kharidi
+        </h2>
+
+        <p>
+            Tumchi Everyday Shopping,
+            Ekach Thikani.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Kharidi
+        </h4>
+
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Contact
+        </a>
+
+        <a href="#">
+            Help
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Customer
+        </h4>
+
+        <a href="#">
+            Returns
+        </a>
+
+        <a href="#">
+            Orders
+        </a>
+
+        <a href="#">
+            Shopping Guide
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            Follow Us
+        </h4>
+
+        <a href="#">
+            Instagram
+        </a>
+
+        <a href="#">
+            Facebook
+        </a>
+
+        <a href="#">
+            X / Twitter
+        </a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Kharidi · Made for a better shopping experience.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
