@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Steam Sign In</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TOP HEADER
+    ========================================== -->
+
+    <header class="top-header">
+
+        <div class="header-container">
+
+
+            <!-- Steam Logo -->
+
+            <div class="steam-logo">
+
+                <img
+                    src="steam-logo.png"
+                    alt="Steam Logo"
+                >
+
+            </div>
+
+
+            <!-- Main Navigation -->
+
+            <nav class="main-nav">
+
+                <a
+                    href="#"
+                    class="active"
+                >
+                    STORE
+                </a>
+
+                <a href="#">
+                    COMMUNITY
+                </a>
+
+                <a href="#">
+                    ABOUT
+                </a>
+
+                <a href="#">
+                    SUPPORT
+                </a>
+
+            </nav>
+
+
+            <!-- Right Side -->
+
+            <div class="header-right">
+
+                <button class="install-btn">
+                    Install Steam
+                </button>
+
+                <span>
+                    sign in
+                </span>
+
+                <span class="separator">
+                    |
+                </span>
+
+                <span>
+                    language ▼
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         SECOND NAVIGATION
+    ========================================== -->
+
+    <div class="store-nav">
+
+        <div class="store-nav-inner">
+
+
+            <!-- Navigation Links -->
+
+            <div class="store-links">
+
+                <a href="#">
+                    Browse
+                    <span>▼</span>
+                </a>
+
+                <a href="#">
+                    Recommendations
+                    <span>▼</span>
+                </a>
+
+                <a href="#">
+                    Categories
+                    <span>▼</span>
+                </a>
+
+                <a href="#">
+                    Ways to Play
+                    <span>▼</span>
+                </a>
+
+                <a href="#">
+                    Special Sections
+                    <span>▼</span>
+                </a>
+
+            </div>
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search the store"
+                >
+
+                <button
+                    type="button"
+                    id="searchButton"
+                >
+                    🔍
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- Background overlay -->
+
+        <div class="background-overlay"></div>
+
+
+        <!-- Login Section -->
+
+        <section class="login-section">
+
+
+            <h1>
+                Sign in
+            </h1>
+
+
+            <!-- Login Card -->
+
+            <div class="login-card">
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <div class="login-left">
+
+
+                    <!-- Account Name -->
+
+                    <label for="accountName">
+                        SIGN IN WITH ACCOUNT NAME
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="accountName"
+                        class="login-input"
+                        autocomplete="username"
+                    >
+
+
+                    <!-- Password -->
+
+                    <label
+                        for="password"
+                        class="password-label"
+                    >
+                        PASSWORD
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        class="login-input"
+                        autocomplete="current-password"
+                    >
+
+
+                    <!-- Remember Me -->
+
+                    <div class="remember-row">
+
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+
+                        <label for="rememberMe">
+                            Remember me
+                        </label>
+
+
+                    </div>
+
+
+                    <!-- Sign In Button -->
+
+                    <button
+                        type="button"
+                        id="signInBtn"
+                        class="sign-in-btn"
+                    >
+                        Sign in
+                    </button>
+
+
+                    <!-- Inline Error -->
+
+                    <p
+                        id="loginMessage"
+                        class="login-message"
+                    ></p>
+
+
+                    <!-- Help -->
+
+                    <a
+                        href="#"
+                        id="helpLink"
+                        class="help-link"
+                    >
+                        Help, I can't sign in
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         SUCCESS POPUP
+    ========================================== -->
+
+    <div
+        class="popup"
+        id="popup"
+    >
+
+
+        <div class="popup-content">
+
+
+            <!-- Success Icon -->
+
+            <div class="popup-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Sign In Successful
+            </h2>
+
+
+            <p>
+                Welcome back to Steam!
+            </p>
+
+
+            <button
+                type="button"
+                id="closePopup"
+            >
+                Continue
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         ERROR POPUP
+    ========================================== -->
+
+    <div
+        class="popup"
+        id="errorPopup"
+    >
+
+
+        <div class="popup-content error-popup">
+
+
+            <!-- Error Icon -->
+
+            <div class="error-icon">
+                ✕
+            </div>
+
+
+            <!-- Error Title -->
+
+            <h2 id="errorTitle">
+                Sign In Failed
+            </h2>
+
+
+            <!-- Error Message -->
+
+            <p id="errorText">
+                Something went wrong.
+            </p>
+
+
+            <!-- Try Again -->
+
+            <button
+                type="button"
+                id="closeErrorPopup"
+            >
+                Try Again
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

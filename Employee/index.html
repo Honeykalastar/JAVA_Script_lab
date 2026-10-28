@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee // Database</title>
+
+    <!-- Pixel Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <div class="small-label">SYSTEM // 001</div>
+
+                <h1>EMPLOYEE<br><span>// DATABASE</span></h1>
+
+                <p class="subtitle">
+                    Manage your team's information
+                </p>
+            </div>
+
+            <div class="system-box">
+                <div class="status-dot"></div>
+                <div>
+                    <div class="system-label">SYSTEM STATUS</div>
+                    <div class="online">ONLINE</div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-grid">
+
+            <!-- ADD EMPLOYEE CARD -->
+            <section class="card add-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="card-number">01</span>
+                        <h2>ADD EMPLOYEE</h2>
+                    </div>
+
+                    <span class="plus">+</span>
+                </div>
+
+                <div class="form">
+
+                    <div class="input-group">
+                        <label>EMPLOYEE ID</label>
+                        <input
+                            type="text"
+                            id="empId"
+                            placeholder="E101"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>EMPLOYEE NAME</label>
+                        <input
+                            type="text"
+                            id="empName"
+                            placeholder="Your Name"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>DEPARTMENT</label>
+                        <input
+                            type="text"
+                            id="department"
+                            placeholder="IT"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>SALARY</label>
+                        <input
+                            type="number"
+                            id="salary"
+                            placeholder="45000"
+                        >
+                    </div>
+
+                    <button class="primary-btn" onclick="addEmployee()">
+                        <span>+</span> ADD EMPLOYEE
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- EMPLOYEE RECORDS CARD -->
+            <section class="card records-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="card-number">02</span>
+                        <h2>EMPLOYEE RECORDS</h2>
+                    </div>
+
+                    <div class="record-count">
+                        <span id="recordCount">00</span>
+                    </div>
+
+                </div>
+
+
+                <div class="database-info">
+
+                    <div>
+                        <span>DATABASE</span>
+                        <strong>employees.json</strong>
+                    </div>
+
+                    <div>
+                        <span>FORMAT</span>
+                        <strong>JSON</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>DEPARTMENT</th>
+                                <th>SALARY</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="employeeBody">
+                            <tr class="empty-row">
+                                <td colspan="4">
+                                    NO RECORDS LOADED
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button class="load-btn" onclick="loadEmployees()">
+                    <span>↻</span> LOAD EMPLOYEES
+                </button>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div>
+                EMPLOYEE DATABASE // V1.0
+            </div>
+
+            <div>
+                JSON + JAVASCRIPT
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
